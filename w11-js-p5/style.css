@@ -1,0 +1,21 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+  position: absolute;
+
+  /*left: calc(50% - 400px);
+  top: calc(50% - 250px);*/
+
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+body {
+  background-color: rgb(50, 50, 50);
+}
