@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style2.css">
+
+    <script src="lib/p5.js"></script>
+    <script src="lib/p5.sound.js"></script>
+
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+    <div class="box1">
+        <h1 class="title">
+            Description and Concept:
+        </h1>
+        <p>
+            This project is to create an imaginary creature using the p5 editor. I created some cute dragons, which
+            contain
+            transformation functions and push () & pop () in order to make the rotation of their teeth and tails. Also,
+            it
+            contains an array to change the size of the dragons. Different functions are also included to create
+            different
+            parts of the dragon.
+        </p>
+    </div>
+
+    <div class="box2">
+
+        <h1 class="title">
+            Coding Progress:
+        </h1>
+
+        <h2 class="subt">
+            i.
+        </h2>
+
+        <p>
+            For my project, the most important part is the function drawCreature (). Since it contains all the main
+            parts of
+            a dragon and calls all the functions of different body parts of a dragon. In this function, I created three
+            crazy dragons with different positions, sizes, and rotating speeds of their tails. At first, I tried to make
+            all
+            three of them have color-changing teeth, however, I found out that the positions of the teeth are uncertain,
+            I
+            bet it’s the rotation part that went wrong, and I failed to correct them. Therefore, I deleted their teeth.
+        </p>
+
+        <h2 class="subt">
+            ii.
+        </h2>
+
+        <p>
+            The second most important part of this project is the function drawHorn (). At first, I intended to make
+            random
+            colors of their teeth and horns each time the code runs. However, if I want their tails to move, I can’t
+            noLoop
+            () the drawHorn function. Maybe I just don’t know how to control different functions separately. However, I
+            found the color changes craze, which is actually pretty cool. Therefore I decided to make them just like
+            that,
+            and call them crazy dragons. I really like this surprising outcome! I also struggled with rotating a line of
+            triangles, because I was not sure about the angles and the positions of different lines of triangles. I used
+            the
+            experimental method to test it out.
+        </p>
+
+        <h2 class="subt">
+            iii.
+        </h2>
+
+        <p>
+            Meanwhile, it took me a really long time to create their feet, which contain in function drawFeet (). I
+            created
+            six different triangles and rotate them separately, which is really time-consuming and I had tried thousands
+            of
+            times to put them in the appropriate positions. After finishing this part, I rethink about it, I guess a
+            better
+            method should be using a for loop () to create a certain number of triangles and then rotate them together.
+            But
+            I’m not so sure how to just rotate them to form a half-circle.
+        </p>
+    </div>
+
+
+</body>
+
+</html>

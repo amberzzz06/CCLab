@@ -1,0 +1,46 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Ysabeau', sans-serif;
+}
+
+canvas {
+  display: block;
+}
+
+h1 {
+  position: absolute;
+  left: 50px;
+  font-weight: 600;
+}
+
+h2 {
+  position: absolute;
+  left: 50px;
+  top: 60px;
+  font-weight: 700;
+}
+
+p {
+  position: absolute;
+  font-weight: 800;
+  left: 700px;
+  top: 710px;
+}
+
+a {
+  color: brown;
+}
+
+a:hover {
+  color: black;
+  font-weight: 1200;
+}
+
+#p5-container {
+  position: absolute;
+  left: 50px;
+  top: 150px;
+  z-index: -1;
+}

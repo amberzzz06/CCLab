@@ -1,0 +1,38 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Ysabeau', sans-serif;
+}
+
+canvas {
+    display: block;
+}
+
+.box1 {
+    background-color: lightsteelblue;
+
+    width: 800px;
+    height: 200px;
+
+    margin: 20px;
+    padding: 10px;
+
+    position: relative;
+    left: 5%;
+    right: 5%;
+}
+
+.box2 {
+    background-color: lightsteelblue;
+
+    width: 800px;
+    height: 700px;
+
+    margin: 20px;
+    padding: 10px;
+
+    position: relative;
+    left: 5%;
+    right: 5%;
+}
