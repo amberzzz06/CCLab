@@ -12,19 +12,16 @@ canvas {
 h1 {
   position: absolute;
   left: 50px;
-  font-weight: 600;
 }
 
 h2 {
   position: absolute;
   left: 50px;
   top: 60px;
-  font-weight: 700;
 }
 
 p {
   position: absolute;
-  font-weight: 800;
   left: 700px;
   top: 710px;
 }
