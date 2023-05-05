@@ -4,6 +4,70 @@ body {
   padding: 0;
 }
 
+#title {
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  position: absolute;
+  top: 130px;
+  font-size: 100px;
+  font-family: 'Foldit', cursive;
+}
+
+#subtitle {
+  display: flex;
+  justify-content: center;
+}
+
+
+p {
+  position: absolute;
+  top: 420px;
+  font-size: 50px;
+  font-family: 'Foldit', cursive;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: darkred;
+}
+
+#description {
+  display: flex;
+  justify-content: center;
+}
+
+p1 {
+  position: absolute;
+  top: 780px;
+  color: aliceblue;
+  font-family: 'Cinzel', serif;
+}
+
+p2 {
+  position: absolute;
+  top: 810px;
+  color: aliceblue;
+  font-family: 'Cinzel', serif;
+}
+
+p3 {
+  position: absolute;
+  top: 840px;
+  color: aliceblue;
+  font-family: 'Cinzel', serif;
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
+}
+
 canvas {
   display: block;
 }
