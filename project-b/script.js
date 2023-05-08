@@ -187,7 +187,7 @@ function draw() {
       "You have already opened it..."
     ];
     pic.txt = [
-      "You have searched it before."
+      "You have searched\nit before."
     ]
   }
   if (book.count > 30) {
