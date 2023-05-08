@@ -145,7 +145,7 @@ function setup() {
   paper2 = new SoundRectArea(660, 550, 200, 80, sound_paper, sound_desk_open, [
     "It's a note!",
     "There seems to be\nsomething written on\nthis piece of paper..",
-    "'Dec. 19th:\n\n        We had a treasure hunt today! It was\nso much fun! I found a watch!\nI hid it in a cabinet. Haha...'"
+    "'Dec. 19th:\n\n        We had a treasure\nhunt today! It was\nso much fun! I found\na watch! I hid it in a\ncabinet. Haha...'"
   ], [img_note], img_table, 460, 200, 350, 500);
   soundAreas.push(paper2);
 
