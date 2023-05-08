@@ -2,6 +2,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  background-color: black;
 }
 
 #title {
@@ -37,6 +38,12 @@ a:hover {
   color: darkred;
 }
 
+#intro {
+  display: flex;
+  justify-content: center;
+  display: flex;
+}
+
 #description {
   display: flex;
   justify-content: center;
@@ -44,21 +51,57 @@ a:hover {
 
 p1 {
   position: absolute;
-  top: 780px;
+  top: 6%;
   color: aliceblue;
   font-family: 'Cinzel', serif;
 }
 
 p2 {
   position: absolute;
-  top: 810px;
+  top: 9%;
   color: aliceblue;
   font-family: 'Cinzel', serif;
 }
 
 p3 {
   position: absolute;
-  top: 840px;
+  top: 12%;
+  color: aliceblue;
+  font-family: 'Cinzel', serif;
+}
+
+p4 {
+  position: absolute;
+  top: 85%;
+  color: aliceblue;
+  font-family: 'Cinzel', serif;
+}
+
+p5 {
+  position: absolute;
+  top: 88%;
+  color: aliceblue;
+  font-family: 'Cinzel', serif;
+}
+
+p6 {
+  position: absolute;
+  top: 91%;
+  color: aliceblue;
+  font-family: 'Cinzel', serif;
+}
+
+p7 {
+  position: absolute;
+  top: 94%;
+  color: aliceblue;
+  font-family: 'Cinzel', serif;
+}
+
+p8 {
+  position: absolute;
+  top: 74%;
+  left: 80%;
   color: aliceblue;
   font-family: 'Cinzel', serif;
 }
