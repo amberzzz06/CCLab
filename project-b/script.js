@@ -29,7 +29,6 @@ function preload() {
   img = loadImage("assets/black.jpg");
   img_note = loadImage("assets/note.jpg");
   img_floor = loadImage("assets/floor.jpg");
-  //img_shupaper = loadImage("assets/shupaper.jpg");
   img_sit = loadImage("assets/sit.jpg");
   img_cabinet = loadImage("assets/cabinet.jpg");
   img_table = loadImage("assets/table.jpg");
@@ -44,8 +43,12 @@ function preload() {
   sound_breath = loadSound("assets/breath.mp3");
   sound_clock = loadSound("assets/clock.mp3");
 
+  sound_clue = loadSound("assets/clue.mp3");
+  sound_break = loadSound("assets/break.mp3");
+
 
   sound_lock = loadSound("assets/lock.m4a");
+  sound_chain = loadSound("assets/chain.m4a");
   sound_book = loadSound("assets/book.m4a");
   sound_paper = loadSound("assets/paper.m4a");
 
@@ -72,84 +75,84 @@ function setup() {
   //backgroundMusic();
   noCursor();
 
-  balcony = new SoundRectArea(190, 440, 170, 230, sound_lock, sound_balcony_open, [
-    "It looks like a window. Maybe I can get\nout through it! But it's locked...",
-    "You need a key to unlock it..",
-    "You need a key to unlock it.."
-  ], [], img_window, 80, 280, 240, 320);
+  balcony = new SoundRectArea(windowWidth / 8, windowHeight / 2.2, 170, 230, sound_chain, sound_chain, sound_chain, [
+    "It looks like a window. Maybe I can get\nout through it!",
+    "It is fastened by a chain..",
+    "You need a hammer to break the chain.."
+  ], [], img_window, windowWidth / 20, windowHeight / 3.2, 240, 320);
   soundAreas.push(balcony);
 
-  armoire = new SoundRectArea(880, 470, 150, 100, sound_armoire_open, sound_armoire_close, [
-    "It's locked!",
-    "You need a key to open it..",
-    "You need a key to open it.."
-  ], [], img_cabinet, 750, 170, 300, 400);
+  armoire = new SoundRectArea(windowWidth / 1.7, windowHeight / 2, 150, 100, sound_armoire_open, sound_clue, sound_door_open, [
+    "It's a cabinet! Try to open it ?",
+    "There's a key in it!",
+    "You have already opened it.."
+  ], [], img_cabinet, windowWidth / 2.1, windowHeight / 5, 300, 400);
   soundAreas.push(armoire);
 
-  pic = new SoundRectArea(1200, 230, 110, 150, sound_door_open, sound_door_close, [
+  pic = new SoundRectArea(windowWidth / 1.23, windowHeight / 4, 110, 150, sound_door_open, sound_door_open, sound_clue, [
     "A photo? Maybe\ntake a closer\nlook?",
     "Is it a house..? The\nphoto which the\nowner of this\nhouse used to\nlooked at?",
-    "There's a key\nbehind the photo\nframe!"
-  ], [], img_wall, 970, 100, 510, 400);
+    "There's a small\nhammer behind\nthe photo frame!"
+  ], [], img_wall, windowWidth / 1.59, windowHeight / 9, 510, 400);
   soundAreas.push(pic);
 
-  pic1 = new SoundRectArea(1070, 185, 100, 95, sound_door_open, sound_door_close, [
+  pic1 = new SoundRectArea(width / 1.4, height / 5, 100, 95, sound_door_open, sound_door_open, sound_door_open, [
     "A photo? Maybe\ntake a closer\nlook?",
     "It looks like a\nstream..?",
     "It looks like a\nstream..?"
-  ], [], img_wall, 970, 100, 510, 400);
+  ], [], img_wall, windowWidth / 1.59, windowHeight / 9, 510, 400);
   soundAreas.push(pic1);
 
-  box = new SoundRectArea(1220, 650, 250, 150, sound_lock, sound_desk_open, [
+  box = new SoundRectArea(windowWidth / 1.3, windowHeight / 1.3, 250, 150, sound_lock, sound_lock, sound_lock, [
+    "It's a treasure box!",
     "It's locked!",
-    "It's locked!",
-    "It's locked!"
-  ], [], img_treasure, 1120, 580, 200, 200);
+    "You need a key to open it!"
+  ], [], img_treasure, windowWidth / 1.37, windowHeight / 1.5, 200, 200);
   soundAreas.push(box);
 
-  box2 = new SoundRectArea(630, 470, 120, 40, sound_lock, sound_desk_open, [
-    "It's locked",
-    "There's a key and a scroll inside it!",
-    "You have already opened it..."
-  ], [], img_table, 460, 200, 350, 500);
+  box2 = new SoundRectArea(windowWidth / 2.4, windowHeight / 1.8, 120, 40, sound_lock, sound_lock, sound_lock, [
+    "You find a box!",
+    "It's locked!",
+    "You need a needle to remove the lock!"
+  ], [], img_table, windowWidth / 3.33, windowHeight / 4, 350, 500);
   soundAreas.push(box2);
 
-  book = new SoundRectArea(610, 330, 140, 180, sound_book, sound_desk_open, [
+  book = new SoundRectArea(windowWidth / 2.5, windowHeight / 2.5, 140, 180, sound_book, sound_book, sound_clue, [
     "It's a book!",
     "There seems to be something in this book..",
-    "You find a key in this book"
-  ], [], img_table, 460, 200, 350, 500);
+    "There's a needle in it!"
+  ], [], img_table, windowWidth / 3.33, windowHeight / 4, 350, 500);
   soundAreas.push(book);
 
-  book1 = new SoundRectArea(380, 620, 150, 100, sound_book, sound_desk_open, [
+  book1 = new SoundRectArea(windowWidth / 4, windowHeight / 1.4, 150, 100, sound_book, sound_book, sound_book, [
     "It's a book!",
     "There doesn't seem to be anything in\nthe book...",
     "There doesn't seem to be anything in\nthe book..."
-  ], [], img_sit, 130, 570, 350, 350);
+  ], [], img_sit, windowWidth / 14, windowHeight / 1.5, 350, 350);
   soundAreas.push(book1);
 
-  paper = new SoundRectArea(800, 780, 150, 100, sound_paper, sound_desk_open, [
+  paper = new SoundNote(windowWidth / 1.8, windowHeight / 1.15, 150, 100, sound_paper, sound_paper, sound_clue, [
     "It's a note!",
     "There seems to be\nsomething written on\nthis piece of paper..",
-    "'Nov. 16th:\n\n        I've noticed that\nmy father has been\nobsessing over a\nphotograph lately. It\nseems to be a house. I \nonder what fascinated\nhim so much...'"
-  ], [img_note], img_floor, 550, 550, 500, 300);
+    "'Nov. 16th:\n\n        I've noticed that\nmy father has been\nobsessing over a\nphotograph lately. It\nseems to be a house. I \nonder what\nfascinated him so\nmuch...'"
+  ], [img_note], img_floor, windowWidth / 2.8, windowHeight / 1.6, 500, 300);
   soundAreas.push(paper);
 
-  paper1 = new SoundRectArea(635, 720, 150, 80, sound_paper, sound_desk_open, [
+  paper1 = new SoundNote(windowWidth / 2.3, windowHeight / 1.2, 150, 80, sound_paper, sound_paper, sound_clue, [
     "It's a note!",
     "There seems to be\nsomething written on\nthis piece of paper..",
     "'Jan. 12:\n\n          I'm obsessed with a\nbook recently. I really\nlove how the author\nnarrate the story...'"
-  ], [img_note], img_floor, 550, 550, 500, 300);
+  ], [img_note], img_floor, windowWidth / 2.8, windowHeight / 1.6, 500, 300);
   soundAreas.push(paper1);
 
-  paper2 = new SoundRectArea(660, 550, 200, 80, sound_paper, sound_desk_open, [
+  paper2 = new SoundNote(windowWidth / 2.3, windowHeight / 1.55, 200, 80, sound_paper, sound_paper, sound_clue, [
     "It's a note!",
     "There seems to be\nsomething written on\nthis piece of paper..",
-    "'Dec. 19th:\n\n        We had a treasure\nhunt today! It was\nso much fun! I found\na watch! I hid it in a\ncabinet. Haha...'"
-  ], [img_note], img_table, 460, 200, 350, 500);
+    "'Dec. 19th:\n\n        We had a treasure\nhunt today! It was\nso much fun! I found\na watch! I hid it in a\ntreasure box. Haha...'"
+  ], [img_note], img_table, windowWidth / 3.33, windowHeight / 4, 350, 500);
   soundAreas.push(paper2);
 
-  horror_1 = new horror(820, 120, 300, 200, sound_horror, img_clown, 0, 0, windowWidth, windowHeight);
+  horror_1 = new horror(windowWidth / 1.76, windowHeight / 6, 300, 200, sound_horror, img_clown, 0, 0, windowWidth, windowHeight);
   horrorAreas.push(horror_1)
 
   //backgroundMusic();
@@ -179,41 +182,45 @@ function draw() {
   //balcony.checkMouse();
   //balcony.display();
 
-  if (pic.count > 30) {
+  if (pic.count >= 15) {
     pic.count = 0;
-    box.count = 0;
-    box.txt = [
-      "There's a key in it!",
-      "You have already opened it..."
+    balcony.count = 0;
+    balcony.txt = [
+      "You break the chain! Click again to escape!",
+      "You successfully escaped from the house!"
     ];
+    balcony.sound1 = sound_break;
+
     pic.txt = [
       "You have searched\nit before."
     ]
   }
-  if (book.count > 30) {
+  if (book.count >= 15) {
     book.count = 0;
     box2.count = 0;
     box2.txt = [
-      "There's a key and a scroll inside it!",
+      "You opened the box! There's a scroll inside it!",
       "You have already opened it..."
     ]
+    box2.sound1 = sound_clue;
+    box2.sound2 = sound_door_open;
+    box2.sound3 = sound_door_open;
     book.txt = [
       "You have searched it before."
     ]
   }
-  if (box.count > 30) {
-    box.count = 0;
-    balcony.count = 0;
-    balcony.txt = [
-      "It's opened! You successfully escaped!"
-    ]
-  }
-  if (box2.count > 30) {
-    box2.count = 0;
+  if (armoire.count >= 15) {
     armoire.count = 0;
-    armoire.txt = [
-      "There is a watch inside!",
+    box.count = 0;
+    box.txt = [
+      "You opened the treasure box! There's a watch in it!",
       "You have already opened it..."
+    ]
+    box.sound1 = sound_clue;
+    box.sound2 = sound_door_open;
+    box.sound3 = sound_door_open;
+    armoire.txt = [
+      "You have searched it before."
     ]
   }
 
@@ -222,6 +229,7 @@ function draw() {
     sa.checkMouse();
     sa.displayText();
     sa.displayArea();
+    sa.displaySound();
   }
 
   for (let i = 0; i < horrorAreas.length; i++) {
@@ -230,23 +238,8 @@ function draw() {
     ha.displayImage();
     ha.displayArea();
   }
-  //if (frameCount >= 10) {
-  //  
-  //}
 
   backgroundMusic();
-
-
-  //if (desk.checkMouseClick()) {
-  // image1_visible = true;
-  // setTimeout(fnName, 1000); 
-  //}
-  /*
-  if (desk.checkMouseClick()) {
-    fill(255, 0, 0);
-    rect(100, 100, 500, 200);
-  }
-  */
 
   // mouse pointer
   push();
@@ -256,6 +249,9 @@ function draw() {
   circle(mouseX, mouseY, 25);
   line(mouseX + 10, mouseY + 10, mouseX + 20, mouseY + 20);
   pop();
+
+  //link
+  //window.open(page2.html);
 }
 
 function backgroundMusic() {
@@ -295,9 +291,142 @@ function backgroundMusic() {
 
 // "button" interactive objects
 class SoundRectArea {
-  constructor(x, y, w, h, sound1, sound2, txt, img, img1, x1, y1, w1, h1) {
+  constructor(x, y, w, h, sound1, sound2, sound3, txt, img, img1, x1, y1, w1, h1) {
     this.sound1 = sound1;
     this.sound2 = sound2;
+    this.sound3 = sound3;
+    this.txt = txt;
+    this.img = img;
+    this.img1 = img1;
+    this.x = x;
+    this.y = y;
+    this.w = w;
+    this.h = h;
+    this.x1 = x1;
+    this.y1 = y1;
+    this.w1 = w1;
+    this.h1 = h1;
+    this.r = 255;
+    this.g = 255;
+    this.b = 255;
+    this.count = 0;
+    this.interval = 0;
+    this.interval_1 = 0;
+    this.sound = 0;
+  }
+  checkMouse() {
+    if (mouseX > this.x - this.w / 2 && mouseX < this.x + this.w / 2
+      && mouseY > this.y - this.h / 2 && mouseY < this.y + this.h / 2) {
+      // in
+      //this.sound2.stop();
+      //if (!this.sound1.isPlaying()) {
+      //  this.sound1.play();
+      //}
+      this.r = 255;
+      this.g = 255;
+      this.b = 0;
+      if (mouseIsPressed) {
+        this.r = 255;
+        this.g = 0;
+        this.b = 0;
+        this.count += 1;
+        this.interval = 100;
+        this.interval_1 = 20;
+        //if (!this.sound1.isPlaying()) {
+        // this.sound1.play();
+        //}
+      }
+    } else {
+      // out
+      /*
+      this.sound1.stop();
+      if (!this.sound2.isPlaying()) {
+        this.sound2.play();
+      }
+      */
+      this.r = 255;
+      this.g = 255;
+      this.b = 255;
+    }
+  }
+  displayArea() {
+    push();
+    translate(this.x, this.y);
+    noStroke();
+    stroke(this.r, this.g, this.b);
+    rectMode(CENTER);
+    rect(0, 0, this.w, this.h);
+    text(this.count, 0, 0);
+    text(this.interval, 0, 20);
+    text(this.interval_1, 0, 40);
+    pop();
+  }
+  displaySound() {
+    if (this.interval_1 > 0) {
+      this.interval_1--;
+      if (this.count <= 10) {
+        this.sound2.stop();
+        this.sound3.stop();
+        if (!this.sound1.isPlaying()) {
+          this.sound1.play();
+        }
+      }
+      else if (this.count < 20) {
+        this.sound1.stop();
+        this.sound3.stop();
+        if (!this.sound2.isPlaying()) {
+          this.sound2.play();
+        }
+      }
+      else if (this.count < 3000) {
+        this.sound1.stop();
+        this.sound2.stop();
+        if (!this.sound3.isPlaying()) {
+          this.sound3.play();
+        }
+      }
+    }
+  }
+  displayText() {
+    if (this.interval > 0) {
+      this.interval--;
+      // show the text
+      let txtIndex = 0;
+      let imgIndex = 0;
+      if (this.count <= 10) {
+        txtIndex = 0;
+      }
+      else if (this.count < 20) {
+        txtIndex = 1;
+      }
+      else if (this.count < 3000) {
+        txtIndex = 2;
+      }
+      push();
+      fill(255);
+      textSize(22);
+      textFont(cinzel);
+      let img = this.img[imgIndex];
+      if (img != undefined) {
+        image(this.img[imgIndex], width / 2.55, height / 9, 300, 400);
+      }
+      text(this.txt[txtIndex], width / 2.5, height / 5);
+      pop();
+
+      push();
+      image(this.img1, this.x1, this.y1, this.w1, this.h1);
+      pop();
+    } else {
+      // don't show the text
+    }
+  }
+}
+
+class SoundNote {
+  constructor(x, y, w, h, sound1, sound2, sound3, txt, img, img1, x1, y1, w1, h1) {
+    this.sound1 = sound1;
+    this.sound2 = sound2;
+    this.sound3 = sound3;
     this.txt = txt;
     this.img = img;
     this.img1 = img1;
@@ -319,7 +448,6 @@ class SoundRectArea {
     if (mouseX > this.x - this.w / 2 && mouseX < this.x + this.w / 2
       && mouseY > this.y - this.h / 2 && mouseY < this.y + this.h / 2) {
       // in
-      this.sound2.stop();
       //if (!this.sound1.isPlaying()) {
       //  this.sound1.play();
       //}
@@ -332,9 +460,7 @@ class SoundRectArea {
         this.b = 0;
         this.count += 1;
         this.interval = 250;
-        if (!this.sound1.isPlaying()) {
-          this.sound1.play();
-        }
+        this.interval_1 = 20;
       }
     } else {
       // out
@@ -353,12 +479,39 @@ class SoundRectArea {
     push();
     translate(this.x, this.y);
     noStroke();
-    //stroke(this.r, this.g, this.b);
+    stroke(this.r, this.g, this.b);
     rectMode(CENTER);
     rect(0, 0, this.w, this.h);
     text(this.count, 0, 0);
     text(this.interval, 0, 20);
     pop();
+  }
+
+  displaySound() {
+    if (this.interval_1 > 0) {
+      this.interval_1--;
+      if (this.count <= 10) {
+        this.sound2.stop();
+        this.sound3.stop();
+        if (!this.sound1.isPlaying()) {
+          this.sound1.play();
+        }
+      }
+      else if (this.count <= 20) {
+        this.sound1.stop();
+        this.sound2.stop();
+        if (!this.sound2.isPlaying()) {
+          this.sound2.play();
+        }
+      }
+      else if (this.count < 3000) {
+        this.sound1.stop();
+        this.sound2.stop();
+        if (!this.sound3.isPlaying()) {
+          this.sound3.play();
+        }
+      }
+    }
   }
   displayText() {
     if (this.interval > 0) {
@@ -384,9 +537,9 @@ class SoundRectArea {
       textFont(cinzel);
       let img = this.img[imgIndex];
       if (img != undefined) {
-        image(this.img[imgIndex], width / 2.03, height / 9, 300, 400);
+        image(this.img[imgIndex], width / 2.2, height / 9, 300, 400);
       }
-      text(this.txt[txtIndex], width / 2, height / 5);
+      text(this.txt[txtIndex], width / 2.1, height / 5);
       pop();
 
       push();
@@ -440,7 +593,7 @@ class horror {
     push();
     translate(this.x, this.y);
     noStroke();
-    //stroke(this.r, this.g, this.b);
+    stroke(this.r, this.g, this.b);
     rectMode(CENTER);
     rect(0, 0, this.w, this.h);
     pop();
