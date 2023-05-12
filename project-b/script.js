@@ -353,7 +353,7 @@ class SoundRectArea {
     push();
     translate(this.x, this.y);
     noStroke();
-    stroke(this.r, this.g, this.b);
+    //stroke(this.r, this.g, this.b);
     rectMode(CENTER);
     rect(0, 0, this.w, this.h);
     text(this.count, 0, 0);
@@ -480,7 +480,7 @@ class SoundNote {
     push();
     translate(this.x, this.y);
     noStroke();
-    stroke(this.r, this.g, this.b);
+    //stroke(this.r, this.g, this.b);
     rectMode(CENTER);
     rect(0, 0, this.w, this.h);
     text(this.count, 0, 0);
@@ -594,7 +594,7 @@ class horror {
     push();
     translate(this.x, this.y);
     noStroke();
-    stroke(this.r, this.g, this.b);
+    //stroke(this.r, this.g, this.b);
     rectMode(CENTER);
     rect(0, 0, this.w, this.h);
     pop();
