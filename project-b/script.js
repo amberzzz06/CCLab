@@ -182,7 +182,7 @@ function draw() {
   //balcony.checkMouse();
   //balcony.display();
 
-  if (pic.count >= 15) {
+  if (pic.count >= 25) {
     pic.count = 0;
     balcony.count = 0;
     balcony.txt = [
@@ -195,7 +195,7 @@ function draw() {
       "You have searched\nit before."
     ]
   }
-  if (book.count >= 15) {
+  if (book.count >= 25) {
     book.count = 0;
     box2.count = 0;
     box2.txt = [
@@ -209,7 +209,7 @@ function draw() {
       "You have searched it before."
     ]
   }
-  if (armoire.count >= 15) {
+  if (armoire.count >= 25) {
     armoire.count = 0;
     box.count = 0;
     box.txt = [
@@ -251,7 +251,7 @@ function draw() {
   pop();
 
   //link
-  //window.open(page2.html);
+  //window.open("http://127.0.0.1:5500/page1.html", "");
 }
 
 function backgroundMusic() {
@@ -402,6 +402,7 @@ class SoundRectArea {
       else if (this.count < 3000) {
         txtIndex = 2;
       }
+
       push();
       fill(255);
       textSize(22);

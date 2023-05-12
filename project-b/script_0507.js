@@ -90,6 +90,7 @@ function setup() {
   soundAreas.push(paper2);
 
   backgroundMusic();
+  open()
 }
 
 function draw() {
@@ -227,13 +228,6 @@ class SoundRectArea {
         this.sound1.play();
       }
     } else {
-      // out
-      /*
-      this.sound1.stop();
-      if (!this.sound2.isPlaying()) {
-        this.sound2.play();
-      }
-      */
     }
   }
   checkMouseClick() {
@@ -344,19 +338,11 @@ class SoundRectAreaKey {
   checkMouseOver() {
     if (mouseX > this.x - this.w / 2 && mouseX < this.x + this.w / 2
       && mouseY > this.y - this.h / 2 && mouseY < this.y + this.h / 2) {
-      // in
       this.sound2.stop();
       if (!this.sound1.isPlaying()) {
         this.sound1.play();
       }
     } else {
-      // out
-      /*
-      this.sound1.stop();
-      if (!this.sound2.isPlaying()) {
-        this.sound2.play();
-      }
-      */
     }
   }
   checkMouseClick() {
