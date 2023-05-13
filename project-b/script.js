@@ -69,90 +69,90 @@ function preload() {
 }
 
 function setup() {
-  let cnv = createCanvas(windowWidth, windowHeight);
+  let cnv = createCanvas(1400, 787.5);
   cnv.parent("canvasContainer");
   background(52, 52, 52);
   //backgroundMusic();
   noCursor();
 
-  balcony = new SoundRectArea(windowWidth / 8, windowHeight / 2.2, 170, 230, sound_chain, sound_chain, sound_chain, [
+  balcony = new SoundRectArea(150, 370, 170, 230, sound_chain, sound_chain, sound_chain, [
     "It looks like a window. Maybe I can get\nout through it!",
     "It is fastened by a chain..",
     "You need a hammer to break the chain.."
-  ], [], img_window, windowWidth / 20, windowHeight / 3.2, 240, 320);
+  ], [], img_window, 55, 230, 240, 320);
   soundAreas.push(balcony);
 
-  armoire = new SoundRectArea(windowWidth / 1.7, windowHeight / 2, 150, 100, sound_armoire_open, sound_clue, sound_door_open, [
+  armoire = new SoundRectArea(800, 400, 150, 100, sound_armoire_open, sound_clue, sound_door_open, [
     "It's a cabinet! Try to open it ?",
     "There's a key in it!",
     "You have already opened it.."
-  ], [], img_cabinet, windowWidth / 2.1, windowHeight / 5, 300, 400);
+  ], [], img_cabinet, 670, 120, 300, 400);
   soundAreas.push(armoire);
 
-  pic = new SoundRectArea(windowWidth / 1.23, windowHeight / 4, 110, 150, sound_door_open, sound_door_open, sound_clue, [
+  pic = new SoundRectArea(1110, 180, 110, 150, sound_door_open, sound_door_open, sound_clue, [
     "A photo? Maybe\ntake a closer\nlook?",
     "Is it a house..? The\nphoto which the\nowner of this\nhouse used to\nlooked at?",
     "There's a small\nhammer behind\nthe photo frame!"
-  ], [], img_wall, windowWidth / 1.59, windowHeight / 9, 510, 400);
+  ], [], img_wall, 875, 68, 510, 400);
   soundAreas.push(pic);
 
-  pic1 = new SoundRectArea(width / 1.4, height / 5, 100, 95, sound_door_open, sound_door_open, sound_door_open, [
+  pic1 = new SoundRectArea(990, 170, 100, 95, sound_door_open, sound_door_open, sound_door_open, [
     "A photo? Maybe\ntake a closer\nlook?",
     "It looks like a\nstream..?",
     "It looks like a\nstream..?"
-  ], [], img_wall, windowWidth / 1.59, windowHeight / 9, 510, 400);
+  ], [], img_wall, 875, 68, 510, 400);
   soundAreas.push(pic1);
 
-  box = new SoundRectArea(windowWidth / 1.3, windowHeight / 1.3, 250, 150, sound_lock, sound_lock, sound_lock, [
+  box = new SoundRectArea(1130, 600, 250, 150, sound_lock, sound_lock, sound_lock, [
     "It's a treasure box!",
     "It's locked!",
     "You need a key to open it!"
-  ], [], img_treasure, windowWidth / 1.37, windowHeight / 1.5, 200, 200);
+  ], [], img_treasure, 1050, 530, 200, 200);
   soundAreas.push(box);
 
-  box2 = new SoundRectArea(windowWidth / 2.4, windowHeight / 1.8, 120, 40, sound_lock, sound_lock, sound_lock, [
+  box2 = new SoundRectArea(600, 430, 120, 40, sound_lock, sound_lock, sound_lock, [
     "You find a box!",
     "It's locked!",
     "You need a needle to remove the lock!"
-  ], [], img_table, windowWidth / 3.33, windowHeight / 4, 350, 500);
+  ], [], img_table, 430, 150, 350, 500);
   soundAreas.push(box2);
 
-  book = new SoundRectArea(windowWidth / 2.5, windowHeight / 2.5, 140, 180, sound_book, sound_book, sound_clue, [
+  book = new SoundRectArea(580, 300, 140, 180, sound_book, sound_book, sound_clue, [
     "It's a book!",
     "There seems to be something in this book..",
     "There's a needle in it!"
-  ], [], img_table, windowWidth / 3.33, windowHeight / 4, 350, 500);
+  ], [], img_table, 430, 150, 350, 500);
   soundAreas.push(book);
 
-  book1 = new SoundRectArea(windowWidth / 4, windowHeight / 1.4, 150, 100, sound_book, sound_book, sound_book, [
+  book1 = new SoundRectArea(350, 580, 150, 100, sound_book, sound_book, sound_book, [
     "It's a book!",
     "There doesn't seem to be anything in\nthe book...",
     "There doesn't seem to be anything in\nthe book..."
-  ], [], img_sit, windowWidth / 14, windowHeight / 1.5, 350, 350);
+  ], [], img_sit, 100, 520, 350, 350);
   soundAreas.push(book1);
 
-  paper = new SoundNote(windowWidth / 1.8, windowHeight / 1.15, 150, 100, sound_paper, sound_paper, sound_clue, [
+  paper = new SoundNote(770, 700, 150, 100, sound_paper, sound_paper, sound_clue, [
     "It's a note!",
     "There seems to be\nsomething written on\nthis piece of paper..",
     "'Nov. 16th:\n\n        I've noticed that\nmy father has been\nobsessing over a\nphotograph lately. It\nseems to be a house. I \nonder what\nfascinated him so\nmuch...'"
-  ], [img_note], img_floor, windowWidth / 2.8, windowHeight / 1.6, 500, 300);
+  ], [img_note], img_floor, 500, 490, 500, 300);
   soundAreas.push(paper);
 
-  paper1 = new SoundNote(windowWidth / 2.3, windowHeight / 1.2, 150, 80, sound_paper, sound_paper, sound_clue, [
+  paper1 = new SoundNote(570, 650, 150, 80, sound_paper, sound_paper, sound_clue, [
     "It's a note!",
     "There seems to be\nsomething written on\nthis piece of paper..",
     "'Jan. 12:\n\n          I'm obsessed with a\nbook recently. I really\nlove how the author\nnarrate the story...'"
-  ], [img_note], img_floor, windowWidth / 2.8, windowHeight / 1.6, 500, 300);
+  ], [img_note], img_floor, 500, 490, 500, 300);
   soundAreas.push(paper1);
 
-  paper2 = new SoundNote(windowWidth / 2.3, windowHeight / 1.55, 200, 80, sound_paper, sound_paper, sound_clue, [
+  paper2 = new SoundNote(650, 500, 200, 80, sound_paper, sound_paper, sound_clue, [
     "It's a note!",
     "There seems to be\nsomething written on\nthis piece of paper..",
     "'Dec. 19th:\n\n        We had a treasure\nhunt today! It was\nso much fun! I found\na watch! I hid it in a\ntreasure box. Haha...'"
-  ], [img_note], img_table, windowWidth / 3.33, windowHeight / 4, 350, 500);
+  ], [img_note], img_table, 430, 150, 350, 500);
   soundAreas.push(paper2);
 
-  horror_1 = new horror(windowWidth / 1.76, windowHeight / 6, 300, 200, sound_horror, img_clown, 0, 0, windowWidth, windowHeight);
+  horror_1 = new horror(800, 130, 250, 150, sound_horror, img_clown, 0, 0, windowWidth, windowHeight);
   horrorAreas.push(horror_1)
 
   //backgroundMusic();
@@ -161,12 +161,14 @@ function setup() {
 function draw() {
   background(0);
   push();
-  image(img, 0, 0, windowWidth, windowHeight);
+  image(img, 0, 0, 1400, 787.5);
+  imageMode(CENTER);
   pop();
 
   noFill();
   strokeWeight(1);
   stroke(255);
+  rect(width / 2 - 700, height / 2 - 393.75, 1400, 787.5);
   //rect(20, 20, windowWidth - 40, windowHeight - 40);
 
   /*bedroom*/
@@ -353,7 +355,7 @@ class SoundRectArea {
     push();
     translate(this.x, this.y);
     noStroke();
-    //stroke(this.r, this.g, this.b);
+    stroke(this.r, this.g, this.b);
     rectMode(CENTER);
     rect(0, 0, this.w, this.h);
     text(this.count, 0, 0);
@@ -480,7 +482,7 @@ class SoundNote {
     push();
     translate(this.x, this.y);
     noStroke();
-    //stroke(this.r, this.g, this.b);
+    stroke(this.r, this.g, this.b);
     rectMode(CENTER);
     rect(0, 0, this.w, this.h);
     text(this.count, 0, 0);
@@ -594,7 +596,7 @@ class horror {
     push();
     translate(this.x, this.y);
     noStroke();
-    //stroke(this.r, this.g, this.b);
+    stroke(this.r, this.g, this.b);
     rectMode(CENTER);
     rect(0, 0, this.w, this.h);
     pop();

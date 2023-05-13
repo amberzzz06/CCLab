@@ -110,7 +110,3 @@ p8 {
   display: flex;
   justify-content: center;
 }
-
-canvas {
-  display: block;
-}
