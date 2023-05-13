@@ -86,7 +86,7 @@ function setup() {
     "It's a cabinet! Try to open it ?",
     "There's a key in it!",
     "You have already opened it.."
-  ], [], img_cabinet, 670, 120, 300, 400);
+  ], [], img_cabinet, 670, 130, 300, 400);
   soundAreas.push(armoire);
 
   pic = new SoundRectArea(1110, 180, 110, 150, sound_door_open, sound_door_open, sound_clue, [
@@ -114,14 +114,14 @@ function setup() {
     "You find a box!",
     "It's locked!",
     "You need a needle to remove the lock!"
-  ], [], img_table, 430, 150, 350, 500);
+  ], [], img_table, 420, 170, 350, 500);
   soundAreas.push(box2);
 
   book = new SoundRectArea(580, 300, 140, 180, sound_book, sound_book, sound_clue, [
     "It's a book!",
     "There seems to be something in this book..",
     "There's a needle in it!"
-  ], [], img_table, 430, 150, 350, 500);
+  ], [], img_table, 420, 170, 350, 500);
   soundAreas.push(book);
 
   book1 = new SoundRectArea(350, 580, 150, 100, sound_book, sound_book, sound_book, [
@@ -149,7 +149,7 @@ function setup() {
     "It's a note!",
     "There seems to be\nsomething written on\nthis piece of paper..",
     "'Dec. 19th:\n\n        We had a treasure\nhunt today! It was\nso much fun! I found\na watch! I hid it in a\ntreasure box. Haha...'"
-  ], [img_note], img_table, 430, 150, 350, 500);
+  ], [img_note], img_table, 420, 170, 350, 500);
   soundAreas.push(paper2);
 
   horror_1 = new horror(800, 130, 250, 150, sound_horror, img_clown, 0, 0, windowWidth, windowHeight);
@@ -355,7 +355,7 @@ class SoundRectArea {
     push();
     translate(this.x, this.y);
     noStroke();
-    stroke(this.r, this.g, this.b);
+    //stroke(this.r, this.g, this.b);
     rectMode(CENTER);
     rect(0, 0, this.w, this.h);
     text(this.count, 0, 0);
@@ -413,7 +413,7 @@ class SoundRectArea {
       if (img != undefined) {
         image(this.img[imgIndex], width / 2.55, height / 9, 300, 400);
       }
-      text(this.txt[txtIndex], width / 2.5, height / 5);
+      text(this.txt[txtIndex], width / 2.2, height / 6);
       pop();
 
       push();
@@ -482,7 +482,7 @@ class SoundNote {
     push();
     translate(this.x, this.y);
     noStroke();
-    stroke(this.r, this.g, this.b);
+    //stroke(this.r, this.g, this.b);
     rectMode(CENTER);
     rect(0, 0, this.w, this.h);
     text(this.count, 0, 0);
@@ -542,7 +542,7 @@ class SoundNote {
       if (img != undefined) {
         image(this.img[imgIndex], width / 2.2, height / 9, 300, 400);
       }
-      text(this.txt[txtIndex], width / 2.1, height / 5);
+      text(this.txt[txtIndex], width / 2.1, height / 5.5);
       pop();
 
       push();
@@ -596,7 +596,7 @@ class horror {
     push();
     translate(this.x, this.y);
     noStroke();
-    stroke(this.r, this.g, this.b);
+    //stroke(this.r, this.g, this.b);
     rectMode(CENTER);
     rect(0, 0, this.w, this.h);
     pop();
